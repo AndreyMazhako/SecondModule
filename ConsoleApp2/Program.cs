@@ -2,15 +2,15 @@
 
 class MainClass
 {
-    public static void Main()
+    public static void Main(string[] args)
     {
-        string MyName = "Andrey";
-        int age = 25;
-        bool pet = false;
-        double size = 42.5;
-        Console.WriteLine("My name is {0}\n" +
-            "My age is {1}\n" +
-            "Do I have a pet? {2}\n" +
-            "My shoe size is {3}", MyName, age, pet, size);
+        Console.Write("Enter your name: ");
+        string name = Console.ReadLine();
+        Console.Write("Enter your age: ");
+        byte age = (byte)int.Parse(Console.ReadLine());
+        Console.Write("When were you born? ");
+        var birthdate = Console.ReadLine();
+        Console.WriteLine("Your name is {0} and age is {1}. You were born {2}", name, age, birthdate);
+        Console.ReadKey();
     }
 }
