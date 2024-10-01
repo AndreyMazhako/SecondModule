@@ -4,13 +4,33 @@ class MainClass
 {
     public static void Main(string[] args)
     {
-        Console.Write("Enter your name: ");
-        string name = Console.ReadLine();
-        Console.Write("Enter your age: ");
-        byte age = (byte)int.Parse(Console.ReadLine());
-        Console.Write("When were you born? ");
-        var birthdate = Console.ReadLine();
-        Console.WriteLine("Your name is {0} and age is {1}. You were born {2}", name, age, birthdate);
-        Console.ReadKey();
+        Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+
+        var color = Console.ReadLine();
+
+        if (color == "red")
+        {
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Black;
+
+            Console.WriteLine("Your color is red!");
+        }
+
+        else if (color == "green")
+        {
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Black;
+
+            Console.WriteLine("Your color is green!");
+        }
+        else
+        {
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Black;
+
+            Console.WriteLine("Your color is cyan!");
+        }
     }
 }
+
+
