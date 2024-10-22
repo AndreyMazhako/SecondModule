@@ -2,33 +2,33 @@
 
 class MainClass
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
-        Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+        Console.WriteLine("Напишите что-то");
+        var str = Console.ReadLine();
 
-        var color = Console.ReadLine();
+        Console.WriteLine("Укажите глубину эха");
+        var deep = int.Parse(Console.ReadLine());
 
-        if (color == "red")
+        Echo(str, deep);
+
+        Console.ReadKey();
+    }
+
+    static void Echo(string saidworld, int deep)
+    {
+        Console.WriteLine("..." + saidworld);
+
+        var modif = saidworld;
+
+        if (modif.Length > 2)
         {
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.ForegroundColor = ConsoleColor.Black;
-
-            Console.WriteLine("Your color is red!");
+            modif = modif.Remove(0, 2);
         }
 
-        else if (color == "green")
+        if (deep > 1)
         {
-            Console.BackgroundColor = ConsoleColor.Green;
-            Console.ForegroundColor = ConsoleColor.Black;
-
-            Console.WriteLine("Your color is green!");
-        }
-        else
-        {
-            Console.BackgroundColor = ConsoleColor.Cyan;
-            Console.ForegroundColor = ConsoleColor.Black;
-
-            Console.WriteLine("Your color is cyan!");
+            Echo(modif, deep - 1);
         }
     }
 }
